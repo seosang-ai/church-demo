@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소금빛교회</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== 소금빛교회 · 샘플 D  (접두어 sb-) ===== */
+:root{
+  --sb-deep:#0E4A52; --sb-teal:#17767B; --sb-mint:#E4F1EE; --sb-sand:#F7F3EC;
+  --sb-gold:#C89B4A; --sb-ink:#1C2A2C; --sb-gray:#5E6B6D; --sb-line:#E3E7E6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Pretendard,sans-serif;color:var(--sb-ink);background:#fff;font-size:17px;line-height:1.65;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+.sb-in{max-width:1200px;margin:0 auto;padding:0 24px}
+.sb-eyebrow{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--sb-teal);text-transform:uppercase}
+.sb-h2{font-size:clamp(26px,3.2vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.3;margin-top:8px}
+.sb-more{font-size:15px;font-weight:600;color:var(--sb-gray);display:inline-flex;align-items:center;gap:6px}
+.sb-more:hover{color:var(--sb-teal)}
+.sb-sec{padding:110px 0}
+.sb-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:44px}
+
+/* 헤더 */
+.sb-hd{position:absolute;inset:0 0 auto;z-index:20;color:#fff}
+.sb-hd .sb-in{display:flex;align-items:center;justify-content:space-between;height:84px}
+.sb-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;letter-spacing:-.02em}
+.sb-logo svg{width:30px;height:30px}
+.sb-nav{display:flex;gap:38px;font-size:16px;font-weight:600}
+.sb-nav a{opacity:.88}.sb-nav a:hover{opacity:1}
+.sb-hd-btn{border:1px solid rgba(255,255,255,.5);padding:9px 18px;border-radius:99px;font-size:14px;font-weight:700}
+.sb-hd-btn:hover{background:#fff;color:var(--sb-deep)}
+.sb-burger{display:none;background:none;border:0;color:#fff}
+
+/* 히어로 — 곡선 바닥 + 세로 표어 + 붓글씨 */
+.sb-hero{position:relative;min-height:760px;color:#fff;overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 78% 30%,rgba(255,255,255,.12),transparent 60%),
+    radial-gradient(700px 600px at 10% 100%,rgba(200,155,74,.22),transparent 60%),
+    linear-gradient(160deg,#145F66 0%,#0E4A52 55%,#0A3A40 100%);
+  border-radius:0 0 50% 50% / 0 0 90px 90px}
+.sb-hero-in{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:200px 24px 220px;display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:start}
+.sb-motto{writing-mode:vertical-rl;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);
+  border-radius:99px;padding:26px 14px;font-family:'Noto Serif KR',serif;font-weight:700;font-size:19px;letter-spacing:.35em;display:flex;align-items:center;gap:14px}
+.sb-motto small{font-family:Pretendard;font-size:12px;letter-spacing:.1em;color:var(--sb-gold);writing-mode:horizontal-tb}
+.sb-hero-tx .sb-welcome{font-size:16px;font-weight:600;opacity:.8;letter-spacing:.04em}
+.sb-brush{font-family:'Nanum Brush Script',cursive;font-size:clamp(64px,9vw,118px);line-height:1;margin:14px 0 22px;letter-spacing:-.01em}
+.sb-brush em{font-style:normal;color:#F3D9A6}
+.sb-verse{font-family:'Noto Serif KR',serif;font-size:17px;line-height:1.9;opacity:.85;max-width:460px}
+.sb-verse cite{display:block;font-style:normal;font-size:14px;margin-top:6px;opacity:.7}
+.sb-church-art{position:absolute;right:4%;bottom:90px;width:min(520px,44vw);z-index:1;opacity:.5}
+
+/* 퀵카드 — 히어로에 걸치기 */
+.sb-quick{position:relative;z-index:5;margin-top:-120px}
+.sb-quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.sb-q{background:#fff;border-radius:22px;padding:28px 26px;box-shadow:0 18px 40px -18px rgba(14,74,82,.35);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;gap:10px;min-height:190px}
+.sb-q:hover{transform:translateY(-6px);box-shadow:0 26px 50px -20px rgba(14,74,82,.45)}
+.sb-q-ic{width:46px;height:46px;border-radius:14px;background:var(--sb-mint);color:var(--sb-teal);display:grid;place-items:center}
+.sb-q-ic svg{width:24px;height:24px}
+.sb-q b{font-size:19px;letter-spacing:-.02em}
+.sb-q p{font-size:15px;color:var(--sb-gray);line-height:1.5}
+.sb-q.is-main{background:var(--sb-teal);color:#fff}
+.sb-q.is-main .sb-q-ic{background:rgba(255,255,255,.16);color:#fff}
+.sb-q.is-main p{color:rgba(255,255,255,.85)}
+.sb-next{margin-top:auto;font-size:14px;font-weight:700;background:rgba(255,255,255,.14);border-radius:10px;padding:8px 12px;display:flex;align-items:center;gap:8px}
+.sb-dot{width:8px;height:8px;border-radius:50%;background:#7FE3C9;box-shadow:0 0 0 0 rgba(127,227,201,.7);animation:sb-pulse 2s infinite}
+@keyframes sb-pulse{70%{box-shadow:0 0 0 8px rgba(127,227,201,0)}100%{box-shadow:0 0 0 0 rgba(127,227,201,0)}}
+
+/* 이번 주 말씀 */
+.sb-word{display:grid;grid-template-columns:1.35fr 1fr;gap:40px}
+.sb-video{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:16/9;
+  background:linear-gradient(135deg,#2B3F44,#11262A);display:flex;align-items:flex-end;color:#fff}
+.sb-video::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 300px at 70% 20%,rgba(200,155,74,.35),transparent 70%)}
+.sb-play{position:absolute;top:50%;left:50%;translate:-50% -50%;width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;transition:scale .25s}
+.sb-video:hover .sb-play{scale:1.08}
+.sb-play svg{width:30px;margin-left:5px;fill:var(--sb-deep)}
+.sb-video-cap{position:relative;padding:28px 32px;width:100%;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.sb-video-cap small{font-size:14px;opacity:.8}
+.sb-video-cap h3{font-size:26px;letter-spacing:-.02em;margin-top:4px}
+.sb-list{display:flex;flex-direction:column}
+.sb-li{display:grid;grid-template-columns:76px 1fr auto;gap:18px;align-items:center;padding:22px 4px;border-bottom:1px solid var(--sb-line)}
+.sb-li:first-child{padding-top:4px}
+.sb-li-date{font-size:13px;color:var(--sb-gray);text-align:center;border-right:1px solid var(--sb-line);padding-right:14px}
+.sb-li-date b{display:block;font-size:24px;color:var(--sb-ink);line-height:1.2}
+.sb-li h4{font-size:18px;letter-spacing:-.02em}
+.sb-li p{font-size:14px;color:var(--sb-gray)}
+.sb-li .sb-arr{width:36px;height:36px;border-radius:50%;border:1px solid var(--sb-line);display:grid;place-items:center;transition:.2s}
+.sb-li:hover .sb-arr{background:var(--sb-teal);border-color:var(--sb-teal);color:#fff}
+.sb-li:hover h4{color:var(--sb-teal)}
+
+/* 예배 안내 */
+.sb-worship{background:var(--sb-sand)}
+.sb-wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sb-wcard{background:#fff;border-radius:22px;padding:32px}
+.sb-wcard h3{font-size:20px;display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:16px;border-bottom:2px solid var(--sb-ink)}
+.sb-wcard h3 span{font-size:12px;font-weight:700;color:var(--sb-gold);letter-spacing:.12em}
+.sb-wrow{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--sb-line);font-size:16px}
+.sb-wrow:last-child{border:0}
+.sb-wrow b{font-variant-numeric:tabular-nums;color:var(--sb-teal)}
+.sb-wrow small{display:block;font-size:13px;color:var(--sb-gray)}
+.sb-wrow.is-now{background:var(--sb-mint);margin:0 -12px;padding:11px 12px;border-radius:10px;border:0}
+
+/* 공동체 — 아치 카드 */
+.sb-arches{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.sb-arch{text-align:center}
+.sb-arch-img{aspect-ratio:3/4.4;border-radius:999px 999px 28px 28px;overflow:hidden;position:relative;margin-bottom:20px}
+.sb-arch-img i{position:absolute;inset:0;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.sb-arch:hover .sb-arch-img i{transform:scale(1.06)}
+.sb-arch-img span{position:absolute;left:50%;bottom:22px;translate:-50% 0;background:rgba(255,255,255,.92);color:var(--sb-deep);font-size:13px;font-weight:700;padding:6px 14px;border-radius:99px;white-space:nowrap}
+.sb-arch:nth-child(even){margin-top:56px}
+.sb-arch h3{font-size:20px;letter-spacing:-.02em}
+.sb-arch p{font-size:15px;color:var(--sb-gray);margin-top:4px}
+
+/* 소식 · 주보 */
+.sb-news{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.sb-box{border:1px solid var(--sb-line);border-radius:24px;padding:34px}
+.sb-box-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.sb-box-hd h3{font-size:22px;letter-spacing:-.02em}
+.sb-nrow{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--sb-line);font-size:16px}
+.sb-nrow:last-child{border:0}
+.sb-nrow:hover span{color:var(--sb-teal)}
+.sb-nrow span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sb-nrow time{color:var(--sb-gray);font-size:14px;flex-shrink:0;font-variant-numeric:tabular-nums}
+.sb-tag{font-style:normal;display:inline-block;font-size:12px;font-weight:700;color:var(--sb-teal);background:var(--sb-mint);border-radius:6px;padding:2px 8px;margin-right:8px}
+.sb-bulletin{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;margin-top:8px}
+.sb-paper{aspect-ratio:3/4;border-radius:10px;background:linear-gradient(160deg,#fff,#EEF3F1);border:1px solid var(--sb-line);box-shadow:8px 8px 0 var(--sb-mint);padding:16px;display:flex;flex-direction:column;justify-content:space-between;font-size:11px;color:var(--sb-gray)}
+.sb-paper b{font-family:'Noto Serif KR',serif;font-size:16px;color:var(--sb-deep)}
+.sb-bulletin h4{font-size:20px}
+.sb-bulletin p{font-size:15px;color:var(--sb-gray);margin:4px 0 18px}
+.sb-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:700;font-size:15px;background:var(--sb-ink);color:#fff;transition:.2s}
+.sb-btn:hover{background:var(--sb-teal)}
+.sb-btn.is-line{background:#fff;color:var(--sb-ink);border:1px solid var(--sb-line)}
+
+/* 새가족 + 오시는 길 */
+.sb-visit{background:var(--sb-deep);color:#fff;border-radius:36px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.sb-visit-tx{padding:64px 56px}
+.sb-visit .sb-eyebrow{color:#9ED9CB}
+.sb-steps{list-style:none;margin:30px 0 34px;display:grid;gap:14px}
+.sb-steps li{display:flex;gap:16px;align-items:center;font-size:16px}
+.sb-steps li b{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:14px;flex-shrink:0}
+.sb-visit .sb-btn{background:#fff;color:var(--sb-deep)}
+.sb-visit .sb-btn:hover{background:var(--sb-gold);color:#fff}
+.sb-map{position:relative;background:#DCE7E4;min-height:420px;
+  background-image:linear-gradient(#C9D8D4 2px,transparent 2px),linear-gradient(90deg,#C9D8D4 2px,transparent 2px);background-size:60px 60px}
+.sb-map::after{content:"";position:absolute;left:0;right:0;top:46%;height:18px;background:#fff;transform:rotate(-8deg)}
+.sb-pin{position:absolute;left:52%;top:38%;z-index:2;translate:-50% -100%;background:var(--sb-teal);color:#fff;font-weight:700;font-size:14px;padding:8px 14px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.sb-pin::after{content:"";position:absolute;left:50%;bottom:-7px;translate:-50% 0;border:7px solid transparent;border-top-color:var(--sb-teal);border-bottom:0}
+.sb-addr{position:absolute;left:20px;right:20px;bottom:20px;z-index:2;background:#fff;color:var(--sb-ink);border-radius:18px;padding:20px 22px;font-size:15px;display:grid;gap:4px}
+.sb-addr b{font-size:17px}
+.sb-addr-btns{display:flex;gap:8px;margin-top:10px}
+.sb-addr-btns a{font-size:13px;font-weight:700;padding:7px 12px;border-radius:8px;background:var(--sb-sand)}
+
+/* 푸터 */
+.sb-ft{background:#0A2F34;color:rgba(255,255,255,.65);padding:56px 0 110px;margin-top:110px;font-size:14px;line-height:1.9}
+.sb-ft .sb-logo{color:#fff;margin-bottom:14px}
+.sb-ft-note{margin-top:18px;opacity:.6}
+.sb-video.has-thumb{background-size:cover;background-position:center}
+.sb-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* 모바일 하단 바 */
+.sb-bar{display:none}
+
+/* 등장 효과 */
+.sb-rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.sb-rv.is-on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.sb-rv{opacity:1;transform:none;transition:none}.sb-dot{animation:none}}
+
+@media (max-width:1024px){
+  .sb-nav,.sb-hd-btn{display:none}.sb-burger{display:block}
+  .sb-quick-grid{grid-template-columns:repeat(2,1fr)}
+  .sb-word,.sb-news,.sb-visit{grid-template-columns:1fr}
+  .sb-wgrid{grid-template-columns:1fr 1fr}
+  .sb-arches{grid-template-columns:repeat(2,1fr)}
+  .sb-arch:nth-child(even){margin-top:0}
+  .sb-church-art{opacity:.22}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .sb-in{padding:0 16px}
+  .sb-sec{padding:76px 0}
+  .sb-hero{min-height:0;border-radius:0 0 50% 50% / 0 0 40px 40px}
+  .sb-hero-in{grid-template-columns:1fr;padding:130px 16px 170px;gap:24px}
+  .sb-motto{writing-mode:horizontal-tb;padding:10px 18px;font-size:15px;letter-spacing:.1em;justify-self:start}
+  .sb-church-art{width:80vw;right:-12vw;bottom:70px;opacity:.16}
+  .sb-quick{margin-top:-110px}
+  .sb-quick-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  .sb-q:not(.is-main){padding:18px 8px;align-items:center;text-align:center}.sb-q:not(.is-main) p{display:none}.sb-q:not(.is-main) b{font-size:14px}
+  .sb-q{padding:20px 18px;min-height:0;border-radius:18px}
+  .sb-q b{font-size:17px}.sb-q p{font-size:13px}
+  .sb-q.is-main{grid-column:1/-1}
+  .sb-head{flex-direction:column;align-items:flex-start;margin-bottom:30px}
+  .sb-wgrid{grid-template-columns:1fr}
+  .sb-wcard,.sb-box{padding:24px}
+  .sb-arches{gap:14px}
+  .sb-bulletin{grid-template-columns:110px 1fr;gap:18px}
+  .sb-visit{border-radius:24px}
+  .sb-visit-tx{padding:40px 24px}
+  .sb-video{aspect-ratio:4/3}.sb-play{width:64px;height:64px;top:38%}.sb-video-cap{padding:20px}.sb-video-cap h3{font-size:21px}
+  .sb-li{grid-template-columns:64px 1fr;gap:14px}.sb-li .sb-arr{display:none}
+  .sb-bar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:rgba(14,74,82,.96);backdrop-filter:blur(10px);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .sb-bar a{color:#fff;font-size:13px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:3px;padding:11px 0}
+  .sb-bar a+a{border-left:1px solid rgba(255,255,255,.14)}
+  .sb-bar svg{width:20px;height:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- ① 헤더 -->
+<header class="sb-hd">
+  <div class="sb-in">
+    <a class="sb-logo" href="#"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M16 3v10M11 8h10"/><path d="M6 29V17l10-6 10 6v12"/><path d="M13 29v-6a3 3 0 0 1 6 0v6"/></svg>소금빛교회</a>
+    <nav class="sb-nav"><a href="#">교회소개</a><a href="#word">예배와 말씀</a><a href="#community">교회학교</a><a href="#community">공동체</a><a href="#news">교회소식</a><a href="#visit">새가족</a></nav>
+    <a class="sb-hd-btn" href="#visit">처음 오셨나요?</a>
+    <button class="sb-burger" aria-label="메뉴 열기"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<!-- ② 히어로 -->
+<section class="sb-hero">
+  <svg class="sb-church-art" viewBox="0 0 400 360" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+    <path d="M150 20v40M136 34h28"/><path d="M150 60l-34 60h68z"/><path d="M116 120v220M184 120v220"/>
+    <path d="M128 150a22 22 0 0 1 44 0v40h-44z"/><path d="M150 150v40"/>
+    <path d="M184 170l90-50 96 60v160"/><path d="M184 340h186"/>
+    <path d="M210 200h30v44h-30zM290 200h30v44h-30zM210 270h30v44h-30zM290 270h30v44h-30z"/>
+    <path d="M130 340v-60a20 20 0 0 1 40 0v60"/><path d="M40 340h120M30 340c20-40 50-60 86-60"/>
+    <path d="M20 340c8-30 20-46 34-50M60 340c4-24 12-36 22-40" opacity=".6"/>
+  </svg>
+  <div class="sb-hero-in">
+    <div class="sb-motto sb-rv"><small>2026</small>교회표어</div>
+    <div class="sb-hero-tx">
+      <p class="sb-welcome sb-rv">소금빛교회에 오신 것을 환영합니다</p>
+      <h1 class="sb-brush sb-rv">세상의 <em>소금</em>,<br>세상의 <em>빛</em></h1>
+      <p class="sb-verse sb-rv">“너희는 세상의 소금이니… 너희는 세상의 빛이라.”<cite>마태복음 5장 13–14절</cite></p>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 퀵메뉴 -->
+<section class="sb-quick">
+  <div class="sb-in sb-quick-grid">
+    <a class="sb-q is-main sb-rv" href="#worship">
+      <span class="sb-q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+      <b>예배 시간 안내</b><p>주일·수요·새벽 예배</p>
+      <span class="sb-next"><i class="sb-dot"></i><span id="sb-next">다음 예배를 확인하는 중…</span></span>
+    </a>
+    <a class="sb-q sb-rv" href="#word">
+      <span class="sb-q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></span>
+      <b>주일 설교 영상</b><p>지난 말씀을 다시 들어요</p>
+    </a>
+    <a class="sb-q sb-rv" href="#news">
+      <span class="sb-q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h10l4 4v14H5z"/><path d="M9 11h6M9 15h6"/></svg></span>
+      <b>이번 주 주보</b><p>10월 넷째 주 주보 보기</p>
+    </a>
+    <a class="sb-q sb-rv" href="#visit">
+      <span class="sb-q-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+      <b>오시는 길</b><p>주차 · 대중교통 안내</p>
+    </a>
+  </div>
+</section>
+
+<!-- ④ 이번 주 말씀 -->
+<section class="sb-sec" id="word">
+  <div class="sb-in">
+    <div class="sb-head sb-rv">
+      <div><p class="sb-eyebrow">Sunday Message</p><h2 class="sb-h2">이번 주 말씀</h2></div>
+      <a class="sb-more" href="#">설교 전체 보기 →</a>
+    </div>
+    <div class="sb-word">
+      <a class="sb-video sb-rv" id="sb-feat" href="#" aria-label="이번 주 설교 영상 재생">
+        <span class="sb-play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+        <div class="sb-video-cap"><small>2026. 10. 25 주일 2부 · 김은혜 담임목사</small><h3>짠맛을 잃지 않는 사람</h3><small>마태복음 5:13–16</small></div>
+      </a>
+      <div class="sb-list sb-rv" id="sb-sermons">
+        <a class="sb-li" href="#"><span class="sb-li-date"><b>18</b>10월</span><span><h4>등불을 등경 위에</h4><p>누가복음 8:16–18 · 주일 2부</p></span><span class="sb-arr">→</span></a>
+        <a class="sb-li" href="#"><span class="sb-li-date"><b>15</b>10월</span><span><h4>기도의 자리로 돌아가기</h4><p>시편 63:1–8 · 수요예배</p></span><span class="sb-arr">→</span></a>
+        <a class="sb-li" href="#"><span class="sb-li-date"><b>11</b>10월</span><span><h4>함께 지어져 가는 집</h4><p>에베소서 2:19–22 · 주일 2부</p></span><span class="sb-arr">→</span></a>
+        <a class="sb-li" href="#"><span class="sb-li-date"><b>04</b>10월</span><span><h4>작은 자 하나에게</h4><p>마태복음 25:31–40 · 주일 2부</p></span><span class="sb-arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 예배 안내 -->
+<section class="sb-sec sb-worship" id="worship">
+  <div class="sb-in">
+    <div class="sb-head sb-rv">
+      <div><p class="sb-eyebrow">Worship</p><h2 class="sb-h2">예배 안내</h2></div>
+      <a class="sb-more" href="#">온라인 예배 참여 →</a>
+    </div>
+    <div class="sb-wgrid">
+      <div class="sb-wcard sb-rv" id="sb-w-주일예배"><h3>주일예배 <span>SUNDAY</span></h3>
+        <div class="sb-wrow" data-sv="0-0900"><span>1부 예배<small>본당 2층</small></span><b>오전 9:00</b></div>
+        <div class="sb-wrow" data-sv="0-1100"><span>2부 예배<small>본당 2층 · 실시간 중계</small></span><b>오전 11:00</b></div>
+        <div class="sb-wrow" data-sv="0-1400"><span>오후 찬양예배<small>본당 2층</small></span><b>오후 2:00</b></div>
+      </div>
+      <div class="sb-wcard sb-rv" id="sb-w-주중예배"><h3>주중예배 <span>WEEKDAY</span></h3>
+        <div class="sb-wrow" data-sv="3-1930"><span>수요 말씀예배<small>본당 2층</small></span><b>오후 7:30</b></div>
+        <div class="sb-wrow" data-sv="5-2030"><span>금요 기도회<small>본당 2층</small></span><b>오후 8:30</b></div>
+        <div class="sb-wrow" data-sv="dawn"><span>새벽기도회<small>화–토 · 소예배실</small></span><b>오전 5:30</b></div>
+      </div>
+      <div class="sb-wcard sb-rv" id="sb-w-다음세대"><h3>다음세대 <span>NEXT GEN</span></h3>
+        <div class="sb-wrow"><span>영유아·유치부<small>교육관 1층</small></span><b>주일 11:00</b></div>
+        <div class="sb-wrow"><span>초등부<small>교육관 2층</small></span><b>주일 11:00</b></div>
+        <div class="sb-wrow"><span>중고등부 · 청년부<small>교육관 3층</small></span><b>주일 1:30</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 공동체 -->
+<section class="sb-sec" id="community">
+  <div class="sb-in">
+    <div class="sb-head sb-rv">
+      <div><p class="sb-eyebrow">Community</p><h2 class="sb-h2">함께 자라는 공동체</h2></div>
+      <a class="sb-more" href="#">사역 전체 보기 →</a>
+    </div>
+    <div class="sb-arches">
+      <a class="sb-arch sb-rv" href="#"><div class="sb-arch-img"><i style="background:linear-gradient(170deg,#F6D9A8,#E59A6B)"></i><span>교회학교</span></div><h3>다음세대</h3><p>믿음의 씨앗을 심는 아이들</p></a>
+      <a class="sb-arch sb-rv" href="#"><div class="sb-arch-img"><i style="background:linear-gradient(170deg,#A9D8CD,#3E8F8A)"></i><span>청년부</span></div><h3>청년 공동체</h3><p>함께 묻고 함께 걷는 20·30</p></a>
+      <a class="sb-arch sb-rv" href="#"><div class="sb-arch-img"><i style="background:linear-gradient(170deg,#E9E1D2,#B9A27A)"></i><span>목장 · 소그룹</span></div><h3>목장 모임</h3><p>삶을 나누는 작은 교회</p></a>
+      <a class="sb-arch sb-rv" href="#"><div class="sb-arch-img"><i style="background:linear-gradient(170deg,#9FB8D6,#2F5D7A)"></i><span>선교 · 봉사</span></div><h3>세상으로</h3><p>지역과 열방을 섬기는 손</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ 소식 · 주보 -->
+<section class="sb-sec" id="news" style="padding-top:0">
+  <div class="sb-in sb-news">
+    <div class="sb-box sb-rv">
+      <div class="sb-box-hd"><h3>교회 소식</h3><a class="sb-more" href="#">더보기 +</a></div>
+      <div id="sb-news-list">
+      <a class="sb-nrow" href="#"><span><i class="sb-tag">행사</i>추수감사주일 연합예배 및 애찬 안내</span><time>10.22</time></a>
+      <a class="sb-nrow" href="#"><span><i class="sb-tag">교육</i>2026 가을 새가족 성경공부 수강생 모집</span><time>10.20</time></a>
+      <a class="sb-nrow" href="#"><span><i class="sb-tag">봉사</i>지역 어르신 김장 나눔 봉사자 모집</span><time>10.17</time></a>
+      <a class="sb-nrow" href="#"><span><i class="sb-tag">공지</i>주차장 공사로 인한 주일 주차 안내</span><time>10.12</time></a>
+      <a class="sb-nrow" href="#"><span><i class="sb-tag">행사</i>청년부 가을 수련회 사진 앨범</span><time>10.08</time></a>
+      </div>
+    </div>
+    <div class="sb-box sb-rv">
+      <div class="sb-box-hd"><h3>이번 주 주보</h3><a class="sb-more" href="#">지난 주보 +</a></div>
+      <div class="sb-bulletin">
+        <div class="sb-paper"><span>2026. 10. 25</span><b>소금빛<br>교회 주보</b><span>제 41권 43호</span></div>
+        <div><h4>10월 넷째 주 주보</h4><p>예배 순서, 교회 소식, 기도 제목을 한 번에 볼 수 있어요.</p>
+          <a class="sb-btn" href="#">주보 보기</a> <a class="sb-btn is-line" href="#">PDF 받기</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ 새가족 · 오시는 길 -->
+<section id="visit">
+  <div class="sb-in">
+    <div class="sb-visit sb-rv">
+      <div class="sb-visit-tx">
+        <p class="sb-eyebrow">Welcome</p>
+        <h2 class="sb-h2">처음 오셨나요?<br>편하게 오시면 됩니다.</h2>
+        <ul class="sb-steps">
+          <li><b>1</b>주일 예배 10분 전, 1층 안내 데스크에 들러 주세요</li>
+          <li><b>2</b>새가족 카드를 쓰시면 담당자가 자리를 안내해 드려요</li>
+          <li><b>3</b>예배 후 새가족실에서 차 한잔 나눠요</li>
+          <li><b>4</b>4주 새가족 모임 후 목장으로 연결해 드려요</li>
+        </ul>
+        <a class="sb-btn" href="#">온라인 새가족 등록 →</a>
+      </div>
+      <div class="sb-map">
+        <span class="sb-pin">소금빛교회</span>
+        <div class="sb-addr"><b>서울시 ○○구 ○○로 123</b><span>지하철 2호선 ○○역 3번 출구 도보 5분</span><span>주일 주차 : 교회 지하 + 인근 ○○초 운동장</span>
+          <div class="sb-addr-btns"><a href="#">네이버 지도</a><a href="#">카카오맵</a><a href="tel:0200000000">02-000-0000</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑨ 푸터 -->
+<footer class="sb-ft">
+  <div class="sb-in">
+    <div class="sb-logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M16 3v10M11 8h10"/><path d="M6 29V17l10-6 10 6v12"/><path d="M13 29v-6a3 3 0 0 1 6 0v6"/></svg>소금빛교회</div>
+    대한예수교장로회 소금빛교회 · 담임목사 김은혜<br>서울시 ○○구 ○○로 123 · 전화 02-000-0000 · 팩스 02-000-0001
+    <p class="sb-ft-note">샘플 디자인 · 가상의 교회입니다. <span id="sb-src"></span></p>
+  </div>
+</footer>
+
+<!-- 모바일 하단 바 -->
+<nav class="sb-bar" aria-label="빠른 연결">
+  <a href="#worship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>예배시간</a>
+  <a href="#visit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>길찾기</a>
+  <a href="tel:0200000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>전화</a>
+</nav>
+
+<script>
+(function(){
+  // 다음 예배 알려주기 (요일 0=일)
+  var list=[[0,9,0,'1부 예배'],[0,11,0,'2부 예배'],[0,14,0,'찬양예배'],[3,19,30,'수요예배'],[5,20,30,'금요기도회']];
+  [2,3,4,5,6].forEach(function(d){list.push([d,5,30,'새벽기도'])});
+  var now=new Date(),best=null;
+  list.forEach(function(s){
+    var t=new Date(now);t.setHours(s[1],s[2],0,0);
+    var diff=(s[0]-now.getDay()+7)%7;t.setDate(t.getDate()+diff);
+    if(t<=now)t.setDate(t.getDate()+7);
+    if(!best||t<best.t)best={t:t,s:s};
+  });
+  if(best){
+    var d=Math.round((new Date(best.t).setHours(0,0,0,0)-new Date(now).setHours(0,0,0,0))/864e5);
+    var day=d===0?'오늘':d===1?'내일':['일','월','화','수','목','금','토'][best.t.getDay()]+'요일';
+    var h=best.s[1],ap=h<12?'오전':'오후',hh=h>12?h-12:h,mm=best.s[2]?':'+best.s[2]:'시';
+    document.getElementById('sb-next').textContent='다음 예배 · '+day+' '+ap+' '+hh+(best.s[2]?mm:'시')+' '+best.s[3];
+  }
+  // 등장 효과
+  var els=document.querySelectorAll('.sb-rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('is-on')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('is-on')},i*90);io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+
+<script>
+/* ===== 구글 시트 연결 =====
+   아래 따옴표 안에 구글 시트 주소를 넣으면 소식·예배·설교가 시트 내용으로 바뀝니다.
+   비워 두면 이 파일에 적힌 기본 내용이 그대로 보입니다. */
+var SHEET_URL = '';
+
+(function(){
+  if(!SHEET_URL)return;
+  function csvUrl(u){
+    if(u.indexOf('/d/e/')>-1)return u.replace(/\/pub(html)?.*$/,'/pub?output=csv');
+    var m=u.match(/\/d\/([\w-]+)/);
+    return m?'https://docs.google.com/spreadsheets/d/'+m[1]+'/gviz/tq?tqx=out:csv&t='+Date.now():u;
+  }
+  function parse(t){
+    var rows=[],row=[],f='',q=false;
+    for(var i=0;i<t.length;i++){var c=t[i];
+      if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else q=false}else f+=c}
+      else if(c=='"')q=true;else if(c==','){row.push(f);f=''}
+      else if(c=='\n'||c=='\r'){if(c=='\r'&&t[i+1]=='\n')i++;row.push(f);rows.push(row);row=[];f=''}
+      else f+=c}
+    if(f||row.length){row.push(f);rows.push(row)}
+    return rows;
+  }
+  function esc(v){return String(v||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function ytId(u){var m=String(u||'').match(/(?:youtu\.be\/|v=|embed\/|shorts\/|live\/)([\w-]{11})/);return m?m[1]:''}
+
+  fetch(csvUrl(SHEET_URL)).then(function(r){return r.text()}).then(function(t){
+    var rows=parse(t).slice(1).map(function(r){return{kind:(r[0]||'').trim(),title:(r[1]||'').trim(),desc:(r[2]||'').trim(),when:(r[3]||'').trim(),link:(r[4]||'').trim()}}).filter(function(r){return r.kind&&r.title});
+    var by={};rows.forEach(function(r){(by[r.kind]=by[r.kind]||[]).push(r)});
+
+    // 교회 소식
+    if(by['소식'])document.getElementById('sb-news-list').innerHTML=by['소식'].slice(0,5).map(function(r){
+      return '<a class="sb-nrow" href="'+esc(r.link||'#')+'"><span>'+(r.desc?'<i class="sb-tag">'+esc(r.desc)+'</i>':'')+esc(r.title)+'</span><time>'+esc(r.when)+'</time></a>'}).join('');
+
+    // 예배 시간 (주일예배 · 주중예배 · 다음세대)
+    ['주일예배','주중예배','다음세대'].forEach(function(k){
+      var box=document.getElementById('sb-w-'+k);if(!by[k]||!box)return;
+      box.querySelectorAll('.sb-wrow').forEach(function(e){e.remove()});
+      box.insertAdjacentHTML('beforeend',by[k].map(function(r){
+        return '<div class="sb-wrow"><span>'+esc(r.title)+'<small>'+esc(r.desc)+'</small></span><b>'+esc(r.when)+'</b></div>'}).join(''));
+    });
+
+    // 설교 — 첫 줄은 큰 영상, 나머지는 목록
+    var ser=by['설교'];
+    if(ser){
+      var f=ser[0],feat=document.getElementById('sb-feat'),id=ytId(f.link);
+      feat.querySelector('.sb-video-cap').innerHTML='<small>'+esc(f.when)+'</small><h3>'+esc(f.title)+'</h3><small>'+esc(f.desc)+'</small>';
+      if(id){
+        feat.classList.add('has-thumb');
+        feat.style.backgroundImage='url(https://i.ytimg.com/vi/'+id+'/hqdefault.jpg)';
+        feat.addEventListener('click',function(e){e.preventDefault();feat.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen title="설교 영상"></iframe>'},{once:true});
+      }else if(f.link)feat.href=f.link;
+      document.getElementById('sb-sermons').innerHTML=ser.slice(1,5).map(function(r){
+        var d=r.when.match(/(\d{1,2})\D+(\d{1,2})\D*$/);
+        return '<a class="sb-li" href="'+esc(r.link||'#')+'" target="_blank" rel="noopener"><span class="sb-li-date"><b>'+(d?('0'+d[2]).slice(-2):'·')+'</b>'+(d?+d[1]+'월':'')+'</span><span><h4>'+esc(r.title)+'</h4><p>'+esc(r.desc)+'</p></span><span class="sb-arr">→</span></a>'}).join('');
+    }
+    var now=new Date();
+    document.getElementById('sb-src').textContent='· 소식·예배·설교는 구글 시트에서 불러왔어요 ('+now.getHours()+':'+('0'+now.getMinutes()).slice(-2)+')';
+  }).catch(function(){/* 시트를 못 읽으면 기본 내용 유지 */});
+})();
+</script>
+</body>
+</html>
